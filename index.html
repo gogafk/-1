@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Текущее время</title>
+
+    <style>
+
+        body {
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            height: 100vh;
+
+            background-color: #f0f0f0;
+
+            font-family: Arial, sans-serif;
+
+        }
+
+        h1 {
+
+            font-size: 36px;
+
+            color: #333;
+
+            margin-bottom: 20px;
+
+        }
+
+        .time-zone {
+
+            font-size: 24px;
+
+            color: #333;
+
+            margin: 5px 0;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Мой первый сайт!</h1>
+
+    <div class="time-zone" id="london">Лондон: --:--:--</div>
+
+    <div class="time-zone" id="moscow">Москва: --:--:--</div>
+
+    <div class="time-zone" id="almaty">Алматы: --:--:--</div>
+
+    <div class="time-zone" id="beijing">Пекин: --:--:--</div>
+
+    <div class="time-zone" id="washington">Вашингтон: --:--:--</div>
+
+    <script>
+
+        function updateTime() {
+
+            const now = new Date();
+
+            // Время для каждой зоны
+
+            const londonTime = now.toLocaleString("en-GB", { timeZone: "Europe/London", hour12: false });
+
+            const moscowTime = now.toLocaleString("ru-RU", { timeZone: "Europe/Moscow", hour12: false });
+
+            const almatyTime = now.toLocaleString("ru-KZ", { timeZone: "Asia/Almaty", hour12: false });
+
+            const beijingTime = now.toLocaleString("zh-CN", { timeZone: "Asia/Shanghai", hour12: false });
+
+            const washingtonTime = now.toLocaleString("en-US", { timeZone: "America/New_York", hour12: false });
+
+            // Обновление текста на странице
+
+            document.getElementById('london').textContent = `Лондон: ${londonTime}`;
+
+            document.getElementById('moscow').textContent = `Москва: ${moscowTime}`;
+
+            document.getElementById('almaty').textContent = `Алматы: ${almatyTime}`;
+
+            document.getElementById('beijing').textContent = `Пекин: ${beijingTime}`;
+
+            document.getElementById('washington').textContent = `Вашингтон: ${washingtonTime}`;
+
+        }
+
+        setInterval(updateTime, 1000);
+
+        updateTime(); // вызовем сразу, чтобы не ждать первую секунду
+
+    </script>
+
+</body>
+
+</html>
+<!-- partial -->
+  
+</body>
+</html>
